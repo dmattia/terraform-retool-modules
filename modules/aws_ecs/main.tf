@@ -37,6 +37,7 @@ resource "aws_db_instance" "this" {
   vpc_security_group_ids       = [aws_security_group.rds.id]
   db_subnet_group_name         = aws_db_subnet_group.this.id
   performance_insights_enabled = var.rds_performance_insights_enabled
+  snapshot_identifier          = "retool-rds-instance-snapshot"
 
   skip_final_snapshot = true
   apply_immediately   = true
